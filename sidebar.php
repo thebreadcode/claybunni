@@ -20,7 +20,7 @@
         </a>
       </li>
       <li class="nav-item mb-3">
-        <a href="" class="text-decoration-none text-white">
+        <a href="products.php" class="text-decoration-none text-white">
           <i class="bi bi-box-seam-fill me-2"></i>
           Products
         </a>
