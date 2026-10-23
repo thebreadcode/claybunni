@@ -1,65 +1,155 @@
-<?php require_once 'header.php'; ?>
+<?php
+ob_start();
+?>
 
-<?php require_once 'sidebar.php'; ?>
-
-<div class="col bg-light">
-  <!-- Mobile Header with Burger -->
-  <div id="myBurger" class="p-3 d-lg-none text-white bg-dark">
-    <div class="row">
-      <a href="#" class="text-white text-decoration-none" data-bs-toggle="offcanvas" data-bs-target="#mySidebar">
-        <i class="bi bi-list"></i><h5 class="ms-3 d-inline">ClayBunni</h5>
-      </a>
+<div class="card shadow border-0 border-start border-5 border-primary mb-4">
+    <div class="card-body">
+        <h2 class="mb-1">Products</h2>
+        <p class="text-muted mb-0">Manage and track all your products</p>
     </div>
-  </div>
-
-  <div class="p-4">
-    <h3 class="mb-4">Products</h3>
-
-    <div class="table-responsive">
-      <table class="table table-striped table-hover bg-white">
-        <thead class="table-dark">
-          <tr>
-            <th>ID</th>
-            <th>Product Name</th>
-            <th>Age Range</th>
-            <th>Clay Type</th>
-            <th>Pieces</th>
-            <th>Price (RM)</th>
-            <th>Stock</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Mini Bunny Pot Kit</td>
-            <td>5-8</td>
-            <td>Air-dry clay</td>
-            <td>3</td>
-            <td>29.90</td>
-            <td>40</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Rainbow Mug Making Set</td>
-            <td>6-10</td>
-            <td>Air-dry clay</td>
-            <td>5</td>
-            <td>45.00</td>
-            <td>25</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Starter Pottery Wheel Kit</td>
-            <td>8-12</td>
-            <td>Kiln clay</td>
-            <td>8</td>
-            <td>89.90</td>
-            <td>12</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
 </div>
+<div class="card shadow-sm mb-4">
+    <div class="card-body">
 
-<?php require_once 'footer.php'; ?>
+        <div class="row g-0 align-items-center mb-3">
+            <div class="col">
+                <h5 class="mb-0">
+                    <i class="bi bi-pencil-square text-primary me-2"></i>
+                    Product Form
+                </h5>
+                <small class="text-muted">Fill in the details of a product</small>
+            </div>
+            <div class="col-auto">
+                <span class="badge bg-primary">* Required fields</span>
+            </div>
+        </div>
+
+        <hr>
+
+        <form action="" method="post" class="needs-validation" novalidate>
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <label for="pid" class="form-label">Product ID <span class="text-danger" aria-hidden="true">*</span></label>
+                    <input name="product_num" id="pid" type="text" class="form-control" placeholder="Enter Product ID" value="" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="name" class="form-label">Name <span class="text-danger" aria-hidden="true">*</span></label>
+                    <input name="product_name" id="name" type="text" class="form-control" placeholder="Enter Product Name" value="" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="price" class="form-label">Price <span class="text-danger" aria-hidden="true">*</span></label>
+                    <input name="product_price" id="price" type="number" class="form-control" placeholder="Enter Price" value="" required min="0" step="0.01">
+                </div>
+                <div class="col-md-3">
+                    <label for="brand" class="form-label">Brand <span class="text-danger" aria-hidden="true">*</span></label>
+                    <select name="product_brand" id="brand" class="form-select" required>
+                        <option value="">Select Brand</option>
+                        <option value="ClayBunni">ClayBunni</option>
+                        <option value="Little Potters">Little Potters</option>
+                        <option value="Muddy Paws">Muddy Paws</option>
+                        <option value="Kiddo Clay">Kiddo Clay</option>
+                    </select>
+                </div>
+
+                <div class="col-md-3">
+                    <label for="product_age" class="form-label">Age Range <span class="text-danger" aria-hidden="true">*</span></label>
+                    <select name="product_age" id="product_age" class="form-select" required>
+                        <option value="">Select Age Range</option>
+                        <option value="3-5">3-5 years</option>
+                        <option value="6-8">6-8 years</option>
+                        <option value="9-12">9-12 years</option>
+                    </select>
+                </div>
+
+                <div class="col-md-3">
+                    <label for="product_clay" class="form-label">Clay Type <span class="text-danger" aria-hidden="true">*</span></label>
+                    <select name="product_clay" id="product_clay" class="form-select" required>
+                        <option value="">Select Clay Type</option>
+                        <option value="Air-dry clay">Air-dry clay</option>
+                        <option value="Polymer clay">Polymer clay</option>
+                        <option value="Kiln clay">Kiln clay</option>
+                    </select>
+                </div>
+
+                <div class="col-md-3">
+                    <label for="quantity" class="form-label">Quantity <span class="text-danger" aria-hidden="true">*</span></label>
+                    <input name="product_quantity" id="quantity" type="number" class="form-control" placeholder="Enter Quantity" value="" required min="0">
+                </div>
+                <div class="col-md-3">
+                    <label for="product_image" class="form-label">Image</label>
+                    <input name="product_image" id="product_image" type="text" class="form-control" placeholder="Enter image filename" value="">
+                </div>
+            </div>
+
+            <hr class="mt-4 mb-3">
+
+            <div>
+                <button type="submit" name="create" class="btn btn-primary">
+                    <i class="bi bi-save me-1"></i>Create
+                </button>
+                <button type="reset" class="btn btn-secondary">
+                    <i class="bi bi-arrow-counterclockwise me-1"></i>Clear
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+<div class="card shadow-sm">
+    <div class="card-body">
+
+        <div class="row align-items-center mb-3">
+            <div class="col">
+                <h5 class="mb-0">
+                    <i class="bi bi-table text-primary me-2"></i>
+                    Product List
+                </h5>
+                <small class="text-muted">View and manage all products in the inventory</small>
+            </div>
+            <div class="col-auto">
+                <span class="badge bg-success">Total: 1 items</span>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Product ID</th>
+                        <th>Name</th>
+                        <th>Price</th>
+                        <th>Brand</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>P001</td>
+                        <td>Mini Bunny Pot Kit</td>
+                        <td>RM 29.90</td>
+                        <td>ClayBunni</td>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-warning">
+                                <i class="bi bi-pencil"></i>
+                            </a>
+                            <button type="button" class="btn btn-sm btn-info text-white">
+                                <i class="bi bi-image"></i>
+                            </button>
+                            <a href="#" class="btn btn-sm btn-danger">
+                                <i class="bi bi-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td colspan="5" class="text-center">No products found</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+<?php
+$content = ob_get_clean();
+require_once 'layout.php';
+?>
