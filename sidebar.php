@@ -7,16 +7,10 @@
     </a>
     <hr>
     <ul class="mynav nav nav-pills flex-column">
-      <li class="nav-item mb-3 mt-2">
-        <a href="" class="text-decoration-none text-white">
+            <li class="nav-item mb-3 mt-2">
+        <a href="home.php" class="text-decoration-none text-white">
           <i class="bi bi-house-fill me-2"></i>
           Home
-        </a>
-      </li>
-      <li class="nav-item mb-3">
-        <a href="" class="text-decoration-none text-white">
-          <i class="bi bi-bar-chart-line-fill me-2"></i>
-          Dashboard
         </a>
       </li>
       <li class="nav-item mb-3">
