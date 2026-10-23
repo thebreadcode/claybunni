@@ -1,57 +1,145 @@
-<?php require_once 'header.php'; ?>
+<?php
+ob_start();
+?>
 
-<?php require_once 'sidebar.php'; ?>
-
-<div class="col bg-light">
-  <!-- Mobile Header with Burger -->
-  <div id="myBurger" class="p-3 d-lg-none text-white bg-dark">
-    <div class="row">
-      <a href="#" class="text-white text-decoration-none" data-bs-toggle="offcanvas" data-bs-target="#mySidebar">
-        <i class="bi bi-list"></i><h5 class="ms-3 d-inline">ClayBunni</h5>
-      </a>
+<div class="card shadow border-0 border-start border-5 border-primary mb-4">
+    <div class="card-body">
+        <h2 class="mb-1">Staffs</h2>
+        <p class="text-muted mb-0">Manage and track all your staffs</p>
     </div>
-  </div>
-
-  <div class="p-4">
-    <h3 class="mb-4">Staffs</h3>
-
-    <div class="table-responsive">
-      <table class="table table-striped table-hover bg-white">
-        <thead class="table-dark">
-          <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Email</th>
-            <th>Phone</th>
-            <th>Role</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Amirul Hakim</td>
-            <td>amirul@claybunni.com</td>
-            <td>012-111 2233</td>
-            <td>Manager</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Farah Nabila</td>
-            <td>farah@claybunni.com</td>
-            <td>013-444 5566</td>
-            <td>Cashier</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Jason Lim</td>
-            <td>jason@claybunni.com</td>
-            <td>011-777 8899</td>
-            <td>Workshop Instructor</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </div>
 </div>
 
-<?php require_once 'footer.php'; ?>
+<div class="card shadow-sm mb-4">
+    <div class="card-body">
+
+        <div class="row g-0 align-items-center mb-3">
+            <div class="col">
+                <h5 class="mb-0">
+                    <i class="bi bi-pencil-square text-primary me-2"></i>
+                    Staff Form
+                </h5>
+                <small class="text-muted">Fill in the details of a staff</small>
+            </div>
+            <div class="col-auto">
+                <span class="badge bg-primary">* Required fields</span>
+            </div>
+        </div>
+
+        <hr>
+
+        <form action="" method="post" class="needs-validation" novalidate>
+            <div class="row g-3">
+                <div class="col-md-3">
+                    <label for="staff_num" class="form-label">Staff ID <span class="text-danger" aria-hidden="true">*</span></label>
+                    <input name="staff_num" id="staff_num" type="text" class="form-control" placeholder="Enter Staff ID" value="" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="staff_name" class="form-label">Name <span class="text-danger" aria-hidden="true">*</span></label>
+                    <input name="staff_name" id="staff_name" type="text" class="form-control" placeholder="Enter Staff Name" value="" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="staff_phone" class="form-label">Phone Number <span class="text-danger" aria-hidden="true">*</span></label>
+                    <input name="staff_phone" id="staff_phone" type="text" class="form-control" placeholder="Enter Phone Number" value="" required>
+                </div>
+                <div class="col-md-3">
+                    <label for="staff_email" class="form-label">Email Address <span class="text-danger" aria-hidden="true">*</span></label>
+                    <input name="staff_email" id="staff_email" type="email" class="form-control" placeholder="Enter Email Address" value="" required>
+                </div>
+            </div>
+
+            <hr class="mt-4 mb-3">
+
+            <div>
+                <button type="submit" name="create" class="btn btn-primary">
+                    <i class="bi bi-save me-1"></i>Create
+                </button>
+                <button type="reset" class="btn btn-secondary">
+                    <i class="bi bi-arrow-counterclockwise me-1"></i>Clear
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<div class="card shadow-sm">
+    <div class="card-body">
+
+        <div class="row align-items-center mb-3">
+            <div class="col">
+                <h5 class="mb-0">
+                    <i class="bi bi-table text-primary me-2"></i>
+                    Staff List
+                </h5>
+                <small class="text-muted">View and manage all staff members</small>
+            </div>
+            <div class="col-auto">
+                <span class="badge bg-success">Total: 3 staffs</span>
+            </div>
+        </div>
+
+        <hr>
+
+        <div class="table-responsive">
+            <table class="table table-striped table-hover">
+                <thead class="table-dark">
+                    <tr>
+                        <th>Staff ID</th>
+                        <th>Name</th>
+                        <th>Phone Number</th>
+                        <th>Email Address</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>S001</td>
+                        <td>Jane Smith</td>
+                        <td>012-1112233</td>
+                        <td>janesmith@claybunni.com</td>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-warning">
+                                <i class="bi bi-pencil"></i>
+                            </a>
+                            <a href="#" class="btn btn-sm btn-danger">
+                                <i class="bi bi-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>S002</td>
+                        <td>Farah Nabila</td>
+                        <td>013-4445566</td>
+                        <td>farah@claybunni.com</td>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-warning">
+                                <i class="bi bi-pencil"></i>
+                            </a>
+                            <a href="#" class="btn btn-sm btn-danger">
+                                <i class="bi bi-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>S003</td>
+                        <td>Amirul Hakim</td>
+                        <td>011-7778899</td>
+                        <td>amirul@claybunni.com</td>
+                        <td>
+                            <a href="#" class="btn btn-sm btn-warning">
+                                <i class="bi bi-pencil"></i>
+                            </a>
+                            <a href="#" class="btn btn-sm btn-danger">
+                                <i class="bi bi-trash"></i>
+                            </a>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<?php
+$content = ob_get_clean();
+require_once 'layout.php';
+?>
