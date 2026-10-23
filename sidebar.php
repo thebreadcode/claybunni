@@ -38,7 +38,7 @@
         </a>
       </li>
       <li class="nav-item mb-3">
-        <a href="" class="text-decoration-none text-white">
+        <a href="orders.php" class="text-decoration-none text-white">
           <i class="bi bi-cart-fill me-2"></i>
           Orders
         </a>
