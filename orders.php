@@ -36,7 +36,10 @@
             <td>2026-10-20</td>
             <td>74.90</td>
             <td><span class="badge bg-success">Completed</span></td>
-            <td><a href="order_details.php" class="btn btn-sm btn-primary">View</a></td>
+            <td>
+  <a href="order_details.php" class="btn btn-sm btn-primary">View</a>
+  <a href="invoice.php" class="btn btn-sm btn-outline-secondary">Invoice</a>
+</td>
           </tr>
           <tr>
             <td>1002</td>
@@ -45,7 +48,10 @@
             <td>2026-10-21</td>
             <td>89.90</td>
             <td><span class="badge bg-warning text-dark">Pending</span></td>
-            <td><a href="order_details.php" class="btn btn-sm btn-primary">View</a></td>
+            <td>
+  <a href="order_details.php" class="btn btn-sm btn-primary">View</a>
+  <a href="invoice.php" class="btn btn-sm btn-outline-secondary">Invoice</a>
+</td>
           </tr>
           <tr>
             <td>1003</td>
@@ -54,7 +60,10 @@
             <td>2026-10-22</td>
             <td>29.90</td>
             <td><span class="badge bg-info text-dark">Processing</span></td>
-            <td><a href="order_details.php" class="btn btn-sm btn-primary">View</a></td>
+            <td>
+  <a href="order_details.php" class="btn btn-sm btn-primary">View</a>
+  <a href="invoice.php" class="btn btn-sm btn-outline-secondary">Invoice</a>
+</td>
           </tr>
         </tbody>
       </table>
